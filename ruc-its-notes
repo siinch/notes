@@ -1,0 +1,671 @@
+NotPetya
+FAKE Ransomware 
+Give bitcoins or lose your data 
+Started in Ukrain
+spread to maersk
+2-3 weeks recovery
+reinstalled PC's(15000) and servers(4000)
+
+Exercise
+A: discuss assets affected
+hardware 
+harddisks no input / output of data
+key card gates locked
+Gates and cranes frozen
+Software
+OS locked encrypted
+applications down
+Data
+databases
+Communication facilities and networks
+
+Backup of essential infrastructure from server in ghana
+individual computer data was lost, some files where backed up in cloud etc.
+
+B) Type of attack
+Ransomware active attack (vs passive)
+
+C) Outside (vs inside)
+
+1) how did notpetya get into Maersk?
+placed via ME doc backdoor at linkos, ukrain
+distributed via. updates/ installation of ME docs on other pcs
+attack mastered from linkos
+2) How did the attack spread?
+EternalBlue(leaked from NSA) exploit
+could run programs with weaknesses in master boot
+3) Why was it hard to recover
+Maersk had no independent backups
+Password not required
+domain controllers were syncronized 
+domain controller could access other computers
+Lesson:.. update, backup, run in lower privilage mode(linux)
+
+Payload: impact on system
+Propulsion: way of propergating attack
+
+General concepts
+ISO 27000 standart for security (international standart organisation)
+others NIST, ISOC....
+
+Information security policy statement (constract)
+
+symmetric(one key) and assymmetric (two key) encryption
+
+DriveGreen Case
+
+Security policy for notpetya attack
+E
+
+Security plan for notpetya attack
+
+
+Policy = goals
+Plan = actions
+CISO = Chief information security officer -> (inputs directly to management)
+CIO = chief information officer
+Some "vice" titles
+xxx = hardworking scape goat
+
+Exercise 2
+1) list arguments in favor of using AES in a ransomware
+strong encryption 128 bits
+fast (symmetric)
+
+2) What parts of figure 2.2 a is still on the computer?
+....
+Remember! Bruteforcing might get lucky
+3) How to design bruteforce attack on
+AES forever
+hybrid encryption: encrypt the key with a assymetric encryption 
+DES 1 hour on super computer 1k years on regular pc
+
+Petya 2016 - actual ransomware
+begin in germany
+dropbox link with job application
+.exe file (DONT CLICK IDIOT)
+asked for adminstrator privilages
+rebooted
+encrypted the master file table
+ransom screen (similar to notpetya)
+Trojan Horse?
+free tool for decryption was made
+amount paid unknown but probably millions
+NotPetya was more destructive
+(Computer could not navigate files, so could be recovered)
+(people mix up petya and notpetya- know the difference)
+Affected only one computer at a time
+
+Master File Table
+NTFS feature
+meta data about all files - names, size, binary adress, small files
+
+Ransomware classification rank (fake)1-6(perfect) on a per computer basis
+NotPetya lvl 6
+lowest common condition
+
+Exercise
+
+----		Petya(6-5)	NotPetya (6)		Wannacry (3)
+APT				(x)
+virus				(x)
+worm				x			x
+trojan h	(x)		(x)
+bot		x		x
+c&c server	x		x
+backdoor			x			x
+rootkit
+exploit				x
+
+Hybrid encryption exercise
+1. what keys are on the victim computer
+PUa still on computer and C=E[PUa, K]
+2. if ransom paid what is supplied to victim and how is data genereted?
+K=D[PRa, C] to victim  used to decrypt data
+send K only to avoid sharing of PR(a)
+
+DriveGreen plan vs ransomware
+
+before attack
+dont click attachment
+use common sense
+use good trusted antivirus
+firewall (custom maybe)
+dont run as administrator
+use linux
+
+after attack
+check backups
+close program / shutdown pc
+remove infected files
+extract infected parts
+
+USER AUTHENTICATION
+
+two steps:
+ - identity
+ - verification
+
+Four authentication methods
+Password-based
+ - 
+Token-based
+Biometric
+Remote User
+
+RUC logon
+ - protects: email, personal, data, licenses, network, wifi, servers, 
+ - authentication: password,
+smartphone:
+ - protects: ......
+ - authentication: biometric (face recognition), password, pin, 
+   sometimes  token-based, what you have
+EU passport:
+ - authentication: biometric(face), token-based(the passport)
+ - protects: identity, access to country -> judistical rights
+
+PASSWORD
+
+PW File (unix and mac)
+ - user_id, salt, hashcode
+ - hashcode: hashfunction(salt(bit-code) + password)
+ - sha-256 secure hash algorithm 256bit
+
+why is the salt stored in clear?
+ - so it can be used to check hashed input versus stored hash
+why is the salt+password hashed (versus encrypted)
+ - so in cannot be decrypted
+why should we use something slower than sha256
+ - harder to bruteforce
+ - but not too slow
+
+Public Key Infrastructure (also uses private keys)
+ - uses certificates
+ - Certificate Authorite (CA)
+ - certificate links public key to identity
+Authentication
+ - user signs something
+
+
+PKI: public key infratructure
+Certificate
+personal info
+public key
+
+CA Certification Authority
+private key to sign(encrypt) certificates PRca
+public key to give to people PUca
+Certificate Revokation List (CRL)
+ - list of certificates that are no longer valid
+
+
+Bob signs in. What should he "sign".
+ 1 Bob logs in
+ 2 service returns R(random number) 
+ 3 Bob sends back Re = E[PRb, R] and Cb 
+ 4 CA encrypts H[Cb] He = E[PRca, H[Cb]]
+ 5 check public key: D[PUb, Re]
+ 6 service decrypts He: Hd = D[PUca, He] and hashes Cb -> H[Cb]
+ 7 check certificate Hd = H[Cb]
+ 8 if both checks are passed let user in
+
+Exercise
+ a) Is digital certificates a digitally signed message?
+ - Yes
+ b) Assume the certificate is in the x.509 format. Is it necessary to use the field "algorithm"?
+ - yes to know which algorithm is used?
+ c) Is it necessary to use the field "Period of validity - not after"?
+ - Yes 
+ d) Who generates Bob's public + private key?
+    - Bob (only he has to have the private key)
+ e) When Bob logs in, what steps must be carried out by the host, to verify Bob's identity?
+ - do random challenge
+ - validate public key and certificate
+
+password attack exercise
+- the rainbow table has password guesses and salts
+- 10^6 * 2^12 = 4 bil
+- make longer salt, make smarter passwords, make delays, hide (encrypt) password file
+
+EU PASSPORT
+MRZ=name, passportnum, date of birth(semi-sensitive), expiry date
+picture
+fingerprints
+.
+.
+Public key
+signature of DS
+certificte of DS
+ - name (eg roskilde manucipality)
+ - PUds
+ - CA info
+ - signature of CSCA (with PRcsca) (eg. Denmark)
+private key
+
+how does the reader passport reader verify the biometric data
+check the document signer(DS) certificate
+  - hash the DS certificate info and decrypt signature using PUcsca
+check the signature of the biometric data
+  - hash the passport info and check with decrypted signature  using the PUds
+
+expiry date to protect against inspection system(IS) theft
+for which certificate is the certificate expiry data crucial?
+ - inner certificate of reader
+
+suppose the certificate is generated today suggest ad expiry data
+ - daily update of local reader certificates (update in the night)
+
+how does the passport know the time
+ - connect to authority through the reader (online)
+
+CODE RED
+defaced webpage
+2 DDOS attacks on whitehouse.gov via IP
+ - whitehouse just changed server
+most harmful: huge distribution so slowed down internet as it crawled the internet
+
+attacked MS(microsoft) IIS(internet information) servers
+
+propagation:
+bufferoverflow in MS ISS
+
+protection:
+patch
+
+worm:
+infected computer would start seaching for victims(MS ISS server)
+
+Buffer overflow:
+more input than memory allocated which overwrites other info
+
+Prevention:
+reject out of bounds info
+do array bounds checking
+compile-time defences: resist attacks in new programs
+run-time defences: resist attacks in existing programs
+
+drivegreen example
+abandon c(?)
+ - no, c is fast ressource light
+ - a bit hard.. OS written in c like MAC Unix and windows
+ - use it smart eg. not use gets()
+bounds checking (eg. use java)
+scatter memory (random memory allocation)
+prevent execution from stack/
+guard pages (meat shield)
+look in the book..
+change operating system maybe openBSD?
+review and update existing programs
+remove unsafe c functions
+make guidelines for programming
+
+Consider the c buffer overflow example
+1. what is the program supposed to do?
+Check that the strings match and print message
+!only 8 characters are allocated!!
+2. what does the program do wrong?
+when input(str2) is over 8 it overwrites the system value (str1)
+3. understand the c program
+the memory is allocated such that str2 writes in the direction of str1
+4. why does it malfucntion?
+becuase there it is not verifying the size on the input gets()
+str2 flows into str1
+
+fix: switch str1 and str2 order
+
+exercise: insert the correct values:
+
+test	str1		str2			valid
+ex1	start/0		startxx			0
+ex2	x		startxxx		0
+ex3	xx		xxxxxxxx		0
+
+in hax what is 4e: 4*16 + 14 = 78
+how many bits in 4 chars?: 8 bits per hex 1 hex per char: 4*8=32
+
+General Data Protection Regulation:
+
+Data protection officer (DPO)
+
+Guiding processing principles of data protection
+article 5.1
+ - purpose limitation (only use data for initial purposes)
+ - data minimization (only necessary data)
+ - Accuracy (correct)
+ - Storage Limitation (only store for necessary time)
+ - Integrity and confidentiality (not manipulated or leaked)
+
+article 5.2
+ - accountability
+
+Lawful basis and limits to processing personal data
+article 6.1
+ - consent of the data subject
+ - performance of a contract
+ - compliance with a legal obligation
+ - protection of vital interests
+ - public interests
+ - Legitimate interest
+
+Special categories of personal data are prohibited
+article 9.1
+ - Revealing racial or ethnic origin
+ - political opinions
+ - religious or philosophical beliefs
+ - Trade union membership
+ - Genetic data
+ - Biometric data
+ - Health data
+ - Sexual orientation
+
+conditions for prohibited data
+ - Explicit consent
+ - Necessary (employment etc.)
+ - Protect vital interests for a person incapable of giving consent
+ - not for profit (political, philosophical etc.)
+ - Manifestly made public by the data subject
+ - Necessary for legal claims
+ - substantial public interest (proportionate)
+ - necessary (medical, heath... etc)
+ - necessary for public interest, scientific, historical etc.
+
+individual rights:
+
+for each point:
+ - why is the right imporant to the individual
+ - how shall an individual exercise her right
+ - how shall a data controller respond
+ - when shall a data controller respond
+ - what are the contents of the response?
+ - why is the right important to the data controller
+
+ - be informed 
+	- important to make informed decisions
+	- say yes/no
+ - access,
+	- important to be able to review
+        -
+	- 
+	-
+	- encrypted
+	- important to communicate with user
+ - rectification,
+	- important to be represented correctly (eg. legally)
+	- request for data to be changed
+ - erasure
+	- important to be disassociated/forgotten/regretting
+	- send request to delete data (should be easy)
+	- fast as possible, authenticate, confirm decision
+	- ---
+        - 
+ - restrict processing
+ 	- important to prevent function creep/control data use
+ - data portability,
+	- important to transfer data to where it is needed 
+ - object, 
+	- important to enforce their other rights
+ - automatic decision making eg. profiling or surgery
+	- important to have a human opinion in case algorithm fails
+
+Privacy:
+
+More survaillance
+ - increase in information collection to help with law inforcement
+ - commercial gain (survaillance capitalism (book)) facebook google
+ - concern about privacy compromise
+
+Definition:
+The right of people to choose freely under what circumstances and to what extent they will reveal themselves, their attitudes, and their behavior to others
+
+Threats:
+ - spying regimes, employers, service providers, insurance, governments.
+ - ex. taxes, traffic, science, medical data, shopping centers, google
+
+Rank by threat to privacy
+   Violater	%	harm	
+ - google 	(100%) 	(3)
+ - china/russia (50%) 	(9)
+ - voting	(00.1%)	(10)
+
+Protection:
+ - Privacy Impact Assesment (PIA)
+ - Privacy Enhancing Technology (PET)
+	- eg. encryption, data minimization, unlinkable, 
+	  informed (max 1 page) consent Virtual identities, Anonymity 		  credentials, Transaction logs
+ - Privacy by Design (PbD)
+	- eg. minimal info transactions
+
+Data mining problem:
+ - de-identify data
+ - use pseudonyms like id number (can be re-identified)
+
+Fair information Practices: Org. of Economic Cooperation (OECD)
+ - Limited Collection	- security
+ - Quality		- openness
+ - purpose		- participation
+ - Use limitation	- accountability
+look in slides...
+
+US laws
+look slides...
+
+Privacy Design Strategies
+
+Think privacy in the development lifecycle. look slides
+
+Data oriented
+ - Minimize (limit he processing and amount of data)
+ - Separate (separate the processes as much as possible)
+ - Abstract (limit the detail of the data)
+ - hide (unlink, unobservable, don't leak..., )
+Process oriented
+ - inform (unstandable and in due time)
+ - control (give adequate control)
+ - enforce (commit and stay committed, dont compromise)
+ - demonstrate (document that dataprocessing is privacy friendly)
+look slides for more detail.
+
+Information Security Management System (ISMS)*
+*100% percent security is not possible. Be aware of shortcommings.
+*Not mandatory. Can use other means of maintaining security.
+
+Benefits of using ISO 27000
+- Guideline for minimum security
+- Verification/certification for clients
+- Communication between orginazations
+- International
+- CIA
+
+Drawbacks of using ISO 27000
+- Overcomplicates security
+- Takes many ressources
+- Document heavy
+- Cost of certification
+- Long time of certification
+
+Baseline Approach (Rudamentary security measures)
+-Firewalls
+-antivirus
+-password policy
+-email policy
+-update software
+-keep independent backups
+
+RUC Risk assessment:
+IT infrastructure: Emails, Accounts, printers, routers, electromagnetic scanners, intra, STADS, Personal data, Research data, Servers, PC's
+
+Implementation Plan - template
+
+---------------------------------------------------------------
+Risk		|
+Asset/Threat	|
+---------------------------------------------------------------
+Level of Risk	|
+---------------------------------------------------------------
+Recommended	|
+Controls	|
+---------------------------------------------------------------
+Priority	|
+---------------------------------------------------------------
+Selected	|
+Constrols	|
+---------------------------------------------------------------
+Required	|
+Ressources	|
+---------------------------------------------------------------
+Responsible	|
+Persons		|
+---------------------------------------------------------------
+Start - End	|
+Date		|
+---------------------------------------------------------------
+Other		|
+Comments	|
+---------------------------------------------------------------
+
+
+Ruc example
+ruc email - password cracking - short passwords - likelihood 3 - 5 - 15
+---------------------------------------------------------------
+Risk		| Hacker cracks password
+Asset/Threat	|
+---------------------------------------------------------------
+Level of Risk	| high
+---------------------------------------------------------------
+Recommended	| Fix system to have longer passwords
+Controls	| require strong passwords
+---------------------------------------------------------------
+Priority	| high
+---------------------------------------------------------------
+Selected	| All
+Constrols	|
+---------------------------------------------------------------
+Required	| IT personnel
+Ressources	| Time for training
+---------------------------------------------------------------
+Responsible	| IMT personel
+Persons		|
+---------------------------------------------------------------
+Start - End	| 24/12 - training
+Date		| January / February - update system
+---------------------------------------------------------------
+Other		| 
+Comments	|
+---------------------------------------------------------------
+
+Learning Continuum
+ - education and experience
+ - Roles and responsibilities relative to IT systems
+ - Security basics and literacy
+ - Security awareness
+
+Give example of how to improve security by awareness:
+Avoid password cracking
+Train people how to make stronger passwords and how to handle them
+Target group: general users
+Make course with security teacher from IMT.
+Make posters or tips in browsers
+Train IT personelle how to make the system require more secure passwords
+Make course with IMT teacher
+
+RUC Education to improve security
+ - Chief Information Security Officer (and other responsible people) should follow the IT Security course at RUC or similar.
+ - Developers should learn about security by design
+
+How does RUC address email/internet concerns?
+ - Business use only
+ - Policy Scope
+ - Content Ownership
+ - Privacy
+ - Standard of conduct
+ - Reasonable
+ - Unlawful activity prohibited
+ - Security Policy
+ - Company Policy
+ - Company Rights
+ - Disciplinary Action
+
+TCP SYN ATTACK
+
+Weaknesses:
+Client attack through VPN
+Client uses public WIFI
+Client is innocent zombie
+
+Difference between code red and heartbleed
+heartbleed tricks server to send confidential data
+code red inject malicious data to the server
+
+poodle attack: look the paper
+man in the middle says tells server to use old encryption standard
+fix: delete old standards
+
+Secure Email:
+SMTP (Secure Mail Transfer Protocol)
+plaintext -(E)-> client --> SMTP server -> internet -> POP/IMAP server -> client -(D)-> plaintext
+
+1st step send email
+msg -> E(SPUK, H(msg)) -> msg+sig -> E(tempkey, msg+sig) -> Emsg+sig
+E(RPK, tempkey) -> ETempkey
+
+2nd step receive email
+Etempkey -> D(RPK, Etempkey) -> tempkey
+Emsg+sig -> D(tempkey, Emsg+sig) -> msg+sig ->  H(msg) =? D(SPUK, sig) 
+
+E3 Easy Email Encryption
+Download email from server, encrypt, reupload to server
+*note has be online to do this
+
+Exercise:
+A. How to design key management so that E3:
+ - mails remain encrypted on the server
+	encrypt mail with symkey
+	encrypt symkey with PUkey
+	send to server
+	extract Eemail and Esymkey
+	dedrypt Esymkey with PRkey
+	decrypt Eemail with symkey
+ - the user should be able to decrypt old mails
+ - each new mail is encrypted using separate key
+B how to access the email server from multiple end user devices
+ copy keys to other device
+C can you avoid exchanging private keys between the devices 
+ 	generate keypairs on each device
+ 	public keys uploaded to server
+	symmetric key encrypted with each public key
+
+Exercise: Wireless networks in drivegreen
+Threats
+ - Accidental Association
+	- someone inside accidentally logs on a different access point
+ - Malicious Association
+	- someone inside logs on a accesspoint that is intentionally configured to trick that someone 
+ - Identity Theft (MAC spoofing)
+	- steal the mac address of a privileged pc
+ - Man in the middle attacks
+	- 
+ - Rogue access points
+ - Rogue end point
+ - Mobile Devices
+
+Exercise. problem 24.1 Open System Authentication
+What it is: 
+1. end point asks to get access to to access point providing mac address
+2. end point gets access based on a negative list (who to exclude)
+pros:
+Fairly simple and convenient
+cons:
+MAC spoofing
+eavesdropping
+no lifetime
+cant be changed
+
+Exercise problem 24.2
+pros:
+solves mac spoofing since also a key is needed
+cons:
+
+Which elements should an ethical code of conduct for Drivegreen address wrt to IT Security
+Should use open source
+Use data to help the users
+ 

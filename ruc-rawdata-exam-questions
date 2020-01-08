@@ -1,0 +1,134 @@
+1.1 Relational Model
+-Structure of relational databases
+-Keys in relational databases
+-Fundamental operations in relational algebra
+
+1.2 Normalization
+-Overall goal of normalization
+-Functional Dependency, superkey and candidate Keys
+-Boyce-Codd Normalform
+
+1.3 Entity-Relationship Model
+-Basic concepts
+-ER-Diagram
+-Weak Entity Sets
+
+1.4 Join in SQL
+-using the operator join in SQL
+-SQL-expressions with and without use of this operator
+-Natural join and examples of other join-operations
+
+1.5 Aggregate functions
+-Built-in aggregate functions
+-Grouping
+-Conditions that applies to groups
+
+1.6 Nested subqueries
+-Subqueries using IN and EXISTS
+-Subqueries using SOME and ALL
+-Subqueries in the From Clause
+
+1.7 SQL Functions and Procedures
+-Purpose
+-Declaration, invocation
+-Language constructs
+
+1.8 SQL Triggers
+-Purpose
+-Language constructs specific for triggers
+-Use for integrity maintenance and data update
+
+1.9 SQL indexing
+-Indexing Purpose
+-How to index a table in SQL
+-How to check whether defined index is used
+
+1.10 Information retrieval basics
+-information retrieval Purpose
+-Precision/recall
+-Inverted Index
+
+1.11 Relevance Ranking Using Terms
+-Term frequency
+-Document frequency
+-tf-idf weighting
+
+1.12 Word clouds
+-Compare to weighted word list
+-Problems related to visualization by word clouds
+-Frequency-based vs relevance weighted word clouds
+
+2.1 C# Delegates & Lambda
+-Describe Delegates
+-Explain Lambda
+-Examples of functional programming in C#
+
+2.2 C# Linq & Object Relational Mapping
+-Linq functions: selection, projection, join, grouping
+-Describe object relational Mapping
+-Entity Framework
+
+2.3 Generics, interfaces & abstracts classes
+-What is the purpose of generics?
+-Parameter constraints
+-How to use interfaces and abstract classes
+
+2.4 Network
+-OSI Model
+-Protocols
+-Routing/Switching
+
+2.5 Network
+-IP protocol and IP numbers
+-TCP Connection establishment
+-Application layer
+
+2.6 HTTP
+-Protocol stack when using HTTP
+-Client/Server Model
+-Request/Response
+
+2.7 Web services
+-What is REST?
+-Interface design and Hypermedia
+-Authentication
+
+2.8 ASP.NET
+-MVC Architecture
+-Middleware
+-REST services
+
+2.9 Design patterns, Application Architecture & Testing
+-Multilayer applications
+-Testing - properties mocking, etc.
+-Abstractions
+
+3.1 Javascript and patterns
+-Dynamic & untyped
+-Objects, literals, module pattern and revealing module patterns
+-Immediately-Invoked Function Expression
+
+3.2 Asynchronous programming
+-Callbacks
+-Functions & closures
+-Ajax (jQuery)
+
+3.3 HTML & DOM
+-Unobtrusive design
+-DOM Element selection
+-Single page applications
+
+3.4 CSS3 & Bootstrap
+-Cascading
+-CSS Selectors
+-Bootstrap grid system
+
+3.5 Knockout & MVVM
+-What is MVVM?
+-Dependency tracking, declarative bindings, templating and the observable patterns
+-Components
+
+3.6 Responsive Web design
+-Media queries
+-mobile first principle
+-Multi-device layout patterns

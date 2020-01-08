@@ -1,0 +1,199 @@
+Drive Green Case:
+Product: Rent electric cars via the internet
+Personnel: 20 including 5 it guys with various skillsets
+(security, web, fullstack, b-end f-end)
+Servers: business plans, customer credit cards, emails, names, addresses etc.
+Cloud Services: Email
+IoT: webcams, the cars
+Office equipment: Laptops, smartphones
+Wired Lan: Servers, desktops.
+Wireless + GSM: Laptops, smartphones
+
+Q1: The NotPetya attack on Maersk - how did the attack begin, how did it spread, and how was encryption used?
+-active outside attack disruptive attack disguised as ransomware
+-began at linkos ukrain via ME Do backdoor and spread to other machines
+-then spread when those machines (bots) updated using EternalBlue exploiting weakness in master boot
+-used symmetric (fast) encryption AES(fast, unbreakable) vs DES (slow, breakable)
+
+Q2: What are the lessons for organizing IT security based on the NotPetya attack?
+-Shut down or monitor equipment
+-check hash value
+-Keep independent ansynchronous backups
+-Create/update securty policy/plan
+-Update regularly, but not immediately
+-perhaps use linux or run in lower privilege mode
+
+﻿Q3: "Hybrid encryption model” of ransomware
+1. inject ransomware with public key
+2. generate symmetric key
+3. encrypt symmetric key and send to attacker
+4. encrypt victims files with symmetric key (fast)
+5. delete/encrypt symmetric key
+6. demand ransom
+(7.) provide symmetric key when ransom is paid
+
+Q4: Taxonomy of ransomware.
+-Categories -rank (fake)1-6(perfect)
+Examples
+-Petya (5-6)
+-WannaCry (~3)
+Encryption
+-Symmetric
+-Asymmetric
+
+Q5: Advantages and disadvantages of biometric authentification.
+verify claimed identity
+4 types: knows, has, is(static), does(dynamic)
+pro:
+-user does not have to remember
+-hard to fake (physically)
+-cannot be cracked
+con:
+-Cannot be changed if stolen
+-not 100% reliable
+-costly
+Other typical means of authentication
+-passwords
+-asymmetric encryption + PKI
+
+Q6: Privacy issues of digital passports. “Basic access control” and “Extended access control” in EU's standard.
+1. Readers should authenticate themselves first:
+-BAC
+ - could read public info like image from chip using custom app so reader is not trusted by pretending to know MRZ
+ - reader only has knowledge of MRZ
+-EAC:
+ - Reader must authenticate itself (has some weaknesses)
+2. Consent by the passport holders
+-BAC:
+ - theoretically goal is reached, because the passport must be opened but;
+ - some info in leaked through subliminal channels before BAC
+3. Proof of integrity and authenticity
+-BAC:
+ - reached with secure messaging system after BAC
+ - integrity: Commands and responses are encrypted and augmented with code
+ - authenticity: Passive authentication
+Improvements
+- avoid contactless cards
+- online terminals
+
+Q7: What is a digital certificate, and how may it be used in a PKI (Public Key Infrastrucutre)?
+Certificate:
+-meta info (varies depending on standart)
+-public key of certificate holder
+-signature (hashed certificate encrypted with PRca)
+-Now people can trust the certificate if they have PUca
+-they can verify PU(s)ender with a random test
+ - if sender accurately decrypts eg. a number
+
+Q8: What is a buffer overflow?
+- a methods of overwriting data by exploiting the way programs allocate memory
+- memory assigned to buffer greater than memory allocated
+- prevent with bounds checking, build into Java
+- used in Code Red to install worms on vulnerable servers
+- drive green: restrict use of unsafe languages such as c
+
+Q9:  "What are the most important aspects of GDPR for an existing organization and how would/should you introduce and maintain GDPR in such an organization?"
+ - article 5.1 and 5.2 guiding processing principles
+ - article 6.1 lawful basis and limits to processing personal data
+ - article 9.1 special cetegories of personal data
+ - Individual rights
+drive green: Inform, Control, Enforce, Demonstate (Authoriy, controller subject)
+
+Q10: "How can Privacy (PbD and Design Strategies) influence the design of an IT system (eg. if you should design the IT systems of DriveGreen)?"
+ - Software development lifecycle with privacy
+ - Separate (more tables)
+ - Hide (hide tables)
+ - Abstract (user ids)
+ - Minimize (omit)
+
+Q11: "What is the major objectives (and content) of a Security Policy for an organization?
+-Policy -> Analysis(plan) -> implementation -> follow-up
+-Objectives:
+ - CIAAAR (Confidentiality, Integrity, Availability, Accountability, Authenticity, Reliability)
+-Content(scope): what who how when why
+-Drive green: Ceo, CISO.. Roskilde Kommune, EU.. Servers, databases, training.. every year, gdpr
+
+Q12: "What is the main elements of a Detailed Security Risk Assessment and how would you conduct it as a CISO(Chief Information Security Officer) of a smaller organization?"
+-Policy -> Analysis(plan) -> implementation -> follow-up
+Then do detailed assessment:
+Step 1: Prepare for Assessement
+ - identify assets
+ - identify context (vulnerbility scale)
+ - risk appetite
+Step 2: Conduct Risk Analysis
+ - threats to assets
+ - vulnerbilities
+ - likelihood (1 - 5) 14.2
+ - consequences (1 - 6) 14.3
+ - determine risk ((likelihood * cost)/30)*3 + 1  (1 - 4) 14.4
+Step 3: Communicate Results
+ - some sort of report
+Step 4: Maintain Assessment
+ - review, repeat
+
+Q13: "Security Implementation Plan - Why, What, How?"
+-Policy -> Analysis(plan) -> implementation -> follow-up
+- What
+    Risk Asset/Threat, Level of Risk ,Recommended Controls
+- Why
+    Priority, Selected Controls
+- How
+    Resources, People, Dates
+- Maintenance - review plan once in a while
+
+Q14: "What is an Internet/E-mail security policy and what would it contain for a smaller company (eg. DriveGreen)?"
+Policies specific for internet and email use
+ - Business use only
+ - Privacy
+ - Standard of Conduct
+ - Security Policy
+ - Disciplinary Action
+
+Q15: "TCP SYN attacks - and how to defend against them"
+- TCP
+Explanation:
+ - Client(s) sends many "SYN"-requests. (Distributed) Denial of Service.
+ - Server is left waiting for ACKS
+Solution:
+ - Configure firewall to block IPs sending many SYN requests but no ACKS
+Weakness:
+ - IP Spoofing (supply fake IP address)
+
+Q16: "TLS Heartbleed attacks - and how to defend against them"
+- TLS symmetric + asymmetric encryption + certificates
+- heartbeat request/response  (are you there?/i am here)
+- Send malformed payload in request from client
+- receive password, certificates, private info etc. in response from server
+- always reject malformed IDs / fill with blanks / update OpenSSL
+
+Q17: "What are the main security challenges of wireless networks?”
+Wireless networks are convenient
+drive green case:
+ - Rogue access points
+ - Rogue end points (wardriving)
+ - Badly Configured Mobile Devices
+ - Bad habits
+ - Badly configured routers
+
+Q18: "What are the main security countermeasures to wireless security threats?”
+ - hide network SSID (name)
+ - Reduce signal strength
+ - upgrade to WPA3
+ - Alternative: use ethernet (wired connections)
+ - Use positive/negative lists
+ - secure endpoints with tls, update and antivirus
+
+
+Q19: Passwords. Discuss passwords, password tables and attacks on password tables. In particular, discuss attacks based on password dictionaries and rainbow tables.
+-Password table: user salt hash
+-password dictionary attack: brute-force one account using guess + salt
+-rainbow table attack: precomputed hashes, search and compare
+   disadvantage: very long
+-Use salts, strong passwords
+-updated hash algorithms like sha256 (layered)
+
+Q20: "Describe important, current data ethical dilemmas and how an ethical code of conduct can address them?"
+-example: more surveillance or not?
+-Issues: Corruption, Misunderstanding, Lacking awareness
+-Ethical Hierarchy: Humanity, Professionalism, Each profession
+-ACM Code of Conduct: General -> Specific -> Organization -> Compliance
