@@ -1,32 +1,66 @@
+select = projection
+where = selection
+from  cartesian product
+
 1.1 Relational Model
 -Structure of relational databases
+    - tables(relation), columns(attributes), rows(tuples)
 -Keys in relational databases
+    - candidate(minimal), super, primary, foreign
 -Fundamental operations in relational algebra
+    - select(rows), project(columns), union, difference, product, rename
+    - intersect, join, natural join
+    - PROJECT name (SELECT name = simon (students))
 
 1.2 Normalization
 -Overall goal of normalization
+    - good design -> avoid redundancy and nulls
+    - decomposition
 -Functional Dependency, superkey and candidate Keys
+    - super and candidate keys
+    - x -(determines)-> y, z
 -Boyce-Codd Normalform
+    - has one common superkey
+    - make example of lossless decomposition
 
 1.3 Entity-Relationship Model
 -Basic concepts
+    - Entity Sets: attributes, PK, FK
+    - Relationship Sets: roles, n-ary, attributes
 -ER-Diagram
+    - Cardinality: one/many
+    - Relation Schema
 -Weak Entity Sets
+    - Dependent on other entities
 
 1.4 Join in SQL
 -using the operator join in SQL
+    - aka. inner join
+    - select * from posts join users on posts.userid = users.userid;
 -SQL-expressions with and without use of this operator
+    - select * from posts, user where posts.userid = users.userid;
 -Natural join and examples of other join-operations
+    - select * from posts natural join user;
+    - inner/outer left/right
 
 1.5 Aggregate functions
 -Built-in aggregate functions
+    - returns 1 result
+    - sum, count, min, max, avg
 -Grouping
+    - group by, order by
 -Conditions that applies to groups
+    - having
 
 1.6 Nested subqueries
 -Subqueries using IN and EXISTS
+    - in (x is in (y, z, i, j k))
+    - exists (is not empty)
 -Subqueries using SOME and ALL
+    - all (all match)
+    - some (one or more )
 -Subqueries in the From Clause
+    - must be renamed with AS
 
 1.7 SQL Functions and Procedures
 -Purpose
