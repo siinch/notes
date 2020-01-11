@@ -121,9 +121,13 @@ l
 
 2.1 C# Delegates & Lambda
 -Describe Delegates
+    - reference for a method
+    - delegate int returnsint(int inputint)
 -Explain Lambda
     - anonymous function x => x * x
 -Examples of functional programming in C#
+    - somearray.Where(condition).OrderBy(entity).Take(x);
+    - public static int Count<T>(T[] arr, Predicate<T> condition)
 
 2.2 C# Linq & Object Relational Mapping
 -Linq functions: selection, projection, join, grouping
@@ -137,13 +141,22 @@ l
 
 2.4 Network
 -OSI Model
+    - 7 layers
 -Protocols
+    - HTTP, ASCII, TLS, TCP/UDP, IP ...
+    - really just standards
 -Routing/Switching
+    - WAN/LAN
+    - IP/MAC
 
 2.5 Network
 -IP protocol and IP numbers
+    - IPv4 IPv6
+    - 8bit vs 16bit
 -TCP Connection establishment
+    - SYN/ACK
 -Application layer
+    - HTTP - type, body, header
 
 2.6 HTTP
 -Protocol stack when using HTTP
@@ -177,8 +190,13 @@ l
 
 3.3 HTML & DOM
 -Unobtrusive design
+    - usable for everyone always
+    - separate behavior, presentation and content
 -DOM Element selection
+    - document.getElementById("someid").text
 -Single page applications
+    - never reload (like standalone apps)
+    - component switching
 
 3.4 CSS3 & Bootstrap
 -Cascading
@@ -192,5 +210,11 @@ l
 
 3.6 Responsive Web design
 -Media queries
+    - @media mediatype (mediafeature)
 -mobile first principle
+    - small device is default
+    - bootstrap grid
 -Multi-device layout patterns
+    - Mostly fluid
+    - column drop
+    - layout shifter
