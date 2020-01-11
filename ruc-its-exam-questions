@@ -55,23 +55,15 @@ con:
 Other typical means of authentication
 -passwords
 -asymmetric encryption + PKI
+-2 factor
 
 Q6: Privacy issues of digital passports. “Basic access control” and “Extended access control” in EU's standard.
 1. Readers should authenticate themselves first:
--BAC
- - could read public info like image from chip using custom app so reader is not trusted by pretending to know MRZ
- - reader only has knowledge of MRZ
--EAC:
- - Reader must authenticate itself (has some weaknesses)
+  - readers can self-authenticate
 2. Consent by the passport holders
--BAC:
- - theoretically goal is reached, because the passport must be opened but;
- - some info in leaked through subliminal channels before BAC
+  - leak of some data can be exploited
 3. Proof of integrity and authenticity
--BAC:
- - reached with secure messaging system after BAC
- - integrity: Commands and responses are encrypted and augmented with code
- - authenticity: Passive authentication
+  - fixed with EAC
 Improvements
 - avoid contactless cards
 - online terminals

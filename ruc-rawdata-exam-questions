@@ -2,6 +2,8 @@ select = projection
 where = selection
 from  cartesian product
 
+l
+
 1.1 Relational Model
 -Structure of relational databases
     - tables(relation), columns(attributes), rows(tuples)
@@ -57,35 +59,60 @@ from  cartesian product
     - in (x is in (y, z, i, j k))
     - exists (is not empty)
 -Subqueries using SOME and ALL
-    - all (all match)
-    - some (one or more )
+    - all (all match are true)
+    - some (one or more is true)
 -Subqueries in the From Clause
     - must be renamed with AS
 
 1.7 SQL Functions and Procedures
 -Purpose
+    - Code reuse
+    - Business logic security
 -Declaration, invocation
+    - create or replace function/procedures
+    - in expression or "call"
 -Language constructs
+    - if statements, while loops, for in loops
+    - commit/rollback
 
 1.8 SQL Triggers
 -Purpose
+    - Integrity maintenance / data update
 -Language constructs specific for triggers
+    - after/before update of x on y
+    - referencing old / new row
+    - return/create trigger
 -Use for integrity maintenance and data update
+    - cascade
 
 1.9 SQL indexing
 -Indexing Purpose
+    - speed up data retrieval
+    - search key -> pointer
+    - Evaluation matrix / cost benefit
 -How to index a table in SQL
+    - primary key
+    - create index x on y(z)
 -How to check whether defined index is used
+    - pg_stat_user_indexes;
 
 1.10 Information retrieval basics
--information retrieval Purpose
+-information retrieval purpose
+    - searching, relevance to input (keywords)
 -Precision/recall
+    - documents relevance to query
+    - number of relevant documents
+    - difficult to quantify
 -Inverted Index
+    - Document, location, count, weights -> keyword
 
 1.11 Relevance Ranking Using Terms
 -Term frequency
+  - frequency relative to total terms log(1 + n(d, t)/n(d))
 -Document frequency
+  - frequency of documents with term (1/)n(t)
 -tf-idf weighting
+    - multiply the two and sum
 
 1.12 Word clouds
 -Compare to weighted word list
@@ -95,6 +122,7 @@ from  cartesian product
 2.1 C# Delegates & Lambda
 -Describe Delegates
 -Explain Lambda
+    - anonymous function x => x * x
 -Examples of functional programming in C#
 
 2.2 C# Linq & Object Relational Mapping
