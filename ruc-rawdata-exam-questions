@@ -116,8 +116,16 @@ l
 
 1.12 Word clouds
 -Compare to weighted word list
+    - provides more context
+    - see if the word is actually relevant
 -Problems related to visualization by word clouds
+    - takes a lot of space
+    - just skim the actual text, kinda nonsense
 -Frequency-based vs relevance weighted word clouds
+    - count frequency of keywords
+    - words might be redundant / text is just long
+    - What are the most relevant keywords
+    - words might be nonsense
 
 2.1 C# Delegates & Lambda
 -Describe Delegates
@@ -131,13 +139,26 @@ l
 
 2.2 C# Linq & Object Relational Mapping
 -Linq functions: selection, projection, join, grouping
+    - can be used on enumerables like lists
+    - like sql, but in C#: from, (join) where, (group) select
 -Describe object relational Mapping
+    - database relations -> objects in server
 -Entity Framework
+    - Models
+    - DbContext, DbSet
+    - ModelBuilder, columnname, tablename
 
 2.3 Generics, interfaces & abstracts classes
 -What is the purpose of generics?
+    - type parameter
+    - code reuse
 -Parameter constraints
+    - where T : notnull, interface name, class, struct
 -How to use interfaces and abstract classes
+    - abstract or interface keyword
+    - polymorphism, dynamic binding, multiple inheritance
+    - Extensibility, Loose coupling
+    - Factories
 
 2.4 Network
 -OSI Model
@@ -160,23 +181,53 @@ l
 
 2.6 HTTP
 -Protocol stack when using HTTP
+    - Application layer
 -Client/Server Model
+    - client(s) send request
+    - Server sends response
 -Request/Response
+    - request line, headers, body
+    - GET, POST, UPDATE, DELETE ...
+    - status codes, headers, body
+    - 2xx, 4xx, 5xx
 
 2.7 Web services
 -What is REST?
+    - web service design paradigm
+    - Stateless, Uniform Interface, self-descriptive
+    - HTTP, JSON, URI
 -Interface design and Hypermedia
+    - intractable, text, images, video, etc.
+    - granularity/semantics, stateless, asynchronous/multi-thread, top down, uniform
+    - feedback, proximity, alignment, white space, contrast, hierarchy, repetition
 -Authentication
+    - password, salt, hash, tokens
 
 2.8 ASP.NET
 -MVC Architecture
+    - model view controller
+    - routing
 -Middleware
+    - link apps together
+    - common infrastructure
+    - services, security, database, transactions, clustering, diagnostics
 -REST services
+    - web service design paradigm
+    - Stateless, Uniform Interface, self-descriptive
+    - HTTP, JSON, URI
 
 2.9 Design patterns, Application Architecture & Testing
 -Multilayer applications
+    - n-tier architecture or MVC
 -Testing - properties mocking, etc.
+    - test driven development
+    - units, AAA,
+    - mocks (called correctly?),
+    - fakes (local implementation)
+    - stubs (fixed output)
 -Abstractions
+    - Observer pattern
+    - Factory pattern
 
 3.1 Javascript and patterns
 -Dynamic & untyped
