@@ -1,8 +1,7 @@
 select = projection
 where = selection
-from  cartesian product
+from = cartesian product
 
-l
 
 1.1 Relational Model
 -Structure of relational databases
@@ -231,13 +230,27 @@ l
 
 3.1 Javascript and patterns
 -Dynamic & untyped
--Objects, literals, module pattern and revealing module patterns
+    - change datatype at runtime
+    - typeof
+    - duck type
+-Objects, literals, module pattern and
+ revealing module patterns
+    - object {}
+    - string, number, bool, null
+    - var module (function(){return}());
 -Immediately-Invoked Function Expression
+    - (function() {})();
 
 3.2 Asynchronous programming
 -Callbacks
+    - function (callback){callback();}
+    - async, await
 -Functions & closures
+    - var closure = (function() {return function(){};});
 -Ajax (jQuery)
+    - page -> server -> page
+    - $(what).action();
+    - simple dom and ajax
 
 3.3 HTML & DOM
 -Unobtrusive design
@@ -251,13 +264,27 @@ l
 
 3.4 CSS3 & Bootstrap
 -Cascading
+    - cascade, specify, inheritance
+    - order, selecting, parent / child
 -CSS Selectors
+    - #ids, .classes, element
+    - @media type (feature)
+    - :pseudo
 -Bootstrap grid system
+    - mobile first
+    - xs sm, md, lg, xl, xxl,
 
 3.5 Knockout & MVVM
 -What is MVVM?
--Dependency tracking, declarative bindings, templating and the observable patterns
+    - model, view, view-Model
+    - data, graphic, interface
+-Dependency tracking, declarative bindings,
+ templating and the observable patterns
+    - observable -> computed observable -> .. 
+    - data-bind="whattobind: observable"
 -Components
+    - template(view) + view model
+    - html/css + Javascript
 
 3.6 Responsive Web design
 -Media queries
