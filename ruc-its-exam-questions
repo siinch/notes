@@ -10,10 +10,11 @@ Wired Lan: Servers, desktops.
 Wireless + GSM: Laptops, smartphones
 
 Q1: The NotPetya attack on Maersk - how did the attack begin, how did it spread, and how was encryption used?
--active outside attack disruptive attack disguised as ransomware
--began at linkos ukrain via ME Do backdoor and spread to other machines
--then spread when those machines (bots) updated using EternalBlue exploiting weakness in master boot
--used symmetric (fast) encryption AES(fast, unbreakable) vs DES (slow, breakable)
+-active outside attack disruptive attack
+-MeDoc server
+-EternalBlue exploit
+-used symmetric (fast) encryption AES
+-symmetric key encrypted or destroyed
 
 Q2: What are the lessons for organizing IT security based on the NotPetya attack?
 -Shut down or monitor equipment
@@ -70,7 +71,7 @@ Improvements
 
 Q7: What is a digital certificate, and how may it be used in a PKI (Public Key Infrastrucutre)?
 Certificate:
--meta info (varies depending on standart)
+-meta info (varies depending on standard)
 -public key of certificate holder
 -signature (hashed certificate encrypted with PRca)
 -Now people can trust the certificate if they have PUca
@@ -84,12 +85,12 @@ Q8: What is a buffer overflow?
 - used in Code Red to install worms on vulnerable servers
 - drive green: restrict use of unsafe languages such as c
 
-Q9:  "What are the most important aspects of GDPR for an existing organization and how would/should you introduce and maintain GDPR in such an organization?"
- - article 5.1 and 5.2 guiding processing principles
- - article 6.1 lawful basis and limits to processing personal data
- - article 9.1 special cetegories of personal data
+Q9: "What are the most important aspects of GDPR for an existing organization and how would/should you introduce and maintain GDPR in such an organization?"
+ - overall limitations
+ - consent and interests
+ - special categories
  - Individual rights
-drive green: Inform, Control, Enforce, Demonstate (Authoriy, controller subject)
+ - drive green: Inform, Control, Enforce, Demonstate (Authoriy, controller subject)
 
 Q10: "How can Privacy (PbD and Design Strategies) influence the design of an IT system (eg. if you should design the IT systems of DriveGreen)?"
  - Software development lifecycle with privacy

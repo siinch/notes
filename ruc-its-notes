@@ -1,6 +1,6 @@
 NotPetya
-FAKE Ransomware 
-Give bitcoins or lose your data 
+FAKE Ransomware
+Give bitcoins or lose your data
 Started in Ukrain
 spread to maersk
 2-3 weeks recovery
@@ -8,7 +8,7 @@ reinstalled PC's(15000) and servers(4000)
 
 Exercise
 A: discuss assets affected
-hardware 
+hardware
 harddisks no input / output of data
 key card gates locked
 Gates and cranes frozen
@@ -37,7 +37,7 @@ could run programs with weaknesses in master boot
 3) Why was it hard to recover
 Maersk had no independent backups
 Password not required
-domain controllers were syncronized 
+domain controllers were syncronized
 domain controller could access other computers
 Lesson:.. update, backup, run in lower privilage mode(linux)
 
@@ -77,7 +77,7 @@ fast (symmetric)
 Remember! Bruteforcing might get lucky
 3) How to design bruteforce attack on
 AES forever
-hybrid encryption: encrypt the key with a assymetric encryption 
+hybrid encryption: encrypt the key with a assymetric encryption
 DES 1 hour on super computer 1k years on regular pc
 
 Petya 2016 - actual ransomware
@@ -148,17 +148,17 @@ two steps:
 
 Four authentication methods
 Password-based
- - 
+ -
 Token-based
 Biometric
 Remote User
 
 RUC logon
- - protects: email, personal, data, licenses, network, wifi, servers, 
+ - protects: email, personal, data, licenses, network, wifi, servers,
  - authentication: password,
 smartphone:
  - protects: ......
- - authentication: biometric (face recognition), password, pin, 
+ - authentication: biometric (face recognition), password, pin,
    sometimes  token-based, what you have
 EU passport:
  - authentication: biometric(face), token-based(the passport)
@@ -201,8 +201,8 @@ Certificate Revokation List (CRL)
 
 Bob signs in. What should he "sign".
  1 Bob logs in
- 2 service returns R(random number) 
- 3 Bob sends back Re = E[PRb, R] and Cb 
+ 2 service returns R(random number)
+ 3 Bob sends back Re = E[PRb, R] and Cb
  4 CA encrypts H[Cb] He = E[PRca, H[Cb]]
  5 check public key: D[PUb, Re]
  6 service decrypts He: Hd = D[PUca, He] and hashes Cb -> H[Cb]
@@ -215,7 +215,7 @@ Exercise
  b) Assume the certificate is in the x.509 format. Is it necessary to use the field "algorithm"?
  - yes to know which algorithm is used?
  c) Is it necessary to use the field "Period of validity - not after"?
- - Yes 
+ - Yes
  d) Who generates Bob's public + private key?
     - Bob (only he has to have the private key)
  e) When Bob logs in, what steps must be carried out by the host, to verify Bob's identity?
@@ -379,13 +379,13 @@ for each point:
  - what are the contents of the response?
  - why is the right important to the data controller
 
- - be informed 
+ - be informed
 	- important to make informed decisions
 	- say yes/no
  - access,
 	- important to be able to review
         -
-	- 
+	-
 	-
 	- encrypted
 	- important to communicate with user
@@ -397,12 +397,12 @@ for each point:
 	- send request to delete data (should be easy)
 	- fast as possible, authenticate, confirm decision
 	- ---
-        - 
+        -
  - restrict processing
  	- important to prevent function creep/control data use
  - data portability,
-	- important to transfer data to where it is needed 
- - object, 
+	- important to transfer data to where it is needed
+ - object,
 	- important to enforce their other rights
  - automatic decision making eg. profiling or surgery
 	- important to have a human opinion in case algorithm fails
@@ -422,7 +422,7 @@ Threats:
  - ex. taxes, traffic, science, medical data, shopping centers, google
 
 Rank by threat to privacy
-   Violater	%	harm	
+   Violater	%	harm
  - google 	(100%) 	(3)
  - china/russia (50%) 	(9)
  - voting	(00.1%)	(10)
@@ -430,7 +430,7 @@ Rank by threat to privacy
 Protection:
  - Privacy Impact Assesment (PIA)
  - Privacy Enhancing Technology (PET)
-	- eg. encryption, data minimization, unlinkable, 
+	- eg. encryption, data minimization, unlinkable,
 	  informed (max 1 page) consent Virtual identities, Anonymity 		  credentials, Transaction logs
  - Privacy by Design (PbD)
 	- eg. minimal info transactions
@@ -549,7 +549,7 @@ Persons		|
 Start - End	| 24/12 - training
 Date		| January / February - update system
 ---------------------------------------------------------------
-Other		| 
+Other		|
 Comments	|
 ---------------------------------------------------------------
 
@@ -610,7 +610,7 @@ E(RPK, tempkey) -> ETempkey
 
 2nd step receive email
 Etempkey -> D(RPK, Etempkey) -> tempkey
-Emsg+sig -> D(tempkey, Emsg+sig) -> msg+sig ->  H(msg) =? D(SPUK, sig) 
+Emsg+sig -> D(tempkey, Emsg+sig) -> msg+sig ->  H(msg) =? D(SPUK, sig)
 
 E3 Easy Email Encryption
 Download email from server, encrypt, reupload to server
@@ -629,7 +629,7 @@ A. How to design key management so that E3:
  - each new mail is encrypted using separate key
 B how to access the email server from multiple end user devices
  copy keys to other device
-C can you avoid exchanging private keys between the devices 
+C can you avoid exchanging private keys between the devices
  	generate keypairs on each device
  	public keys uploaded to server
 	symmetric key encrypted with each public key
@@ -639,17 +639,17 @@ Threats
  - Accidental Association
 	- someone inside accidentally logs on a different access point
  - Malicious Association
-	- someone inside logs on a accesspoint that is intentionally configured to trick that someone 
+	- someone inside logs on a accesspoint that is intentionally configured to trick that someone
  - Identity Theft (MAC spoofing)
 	- steal the mac address of a privileged pc
  - Man in the middle attacks
-	- 
+	-
  - Rogue access points
  - Rogue end point
  - Mobile Devices
 
 Exercise. problem 24.1 Open System Authentication
-What it is: 
+What it is:
 1. end point asks to get access to to access point providing mac address
 2. end point gets access based on a negative list (who to exclude)
 pros:
@@ -668,4 +668,3 @@ cons:
 Which elements should an ethical code of conduct for Drivegreen address wrt to IT Security
 Should use open source
 Use data to help the users
- 
