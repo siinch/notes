@@ -87,7 +87,6 @@ from = cartesian product
 1.9 SQL indexing
 -Indexing Purpose
     - speed up data retrieval
-    - search key -> pointer
     - Evaluation matrix / cost benefit
 -How to index a table in SQL
     - primary key
@@ -155,7 +154,6 @@ from = cartesian product
     - where T : notnull, interface name, class, struct
 -How to use interfaces and abstract classes
     - abstract or interface keyword
-    - polymorphism, dynamic binding, multiple inheritance
     - Extensibility, Loose coupling
     - Factories
 
@@ -280,7 +278,7 @@ from = cartesian product
     - data, graphic, interface
 -Dependency tracking, declarative bindings,
  templating and the observable patterns
-    - observable -> computed observable -> .. 
+    - observable -> computed observable -> ..
     - data-bind="whattobind: observable"
 -Components
     - template(view) + view model

@@ -19,8 +19,8 @@ Q1: The NotPetya attack on Maersk - how did the attack begin, how did it spread,
 Q2: What are the lessons for organizing IT security based on the NotPetya attack?
 -Shut down or monitor equipment
 -check hash value
--Keep independent ansynchronous backups
--Create/update securty policy/plan
+-Keep independent asynchronous backups
+-Create/update security policy/plan
 -Update regularly, but not immediately
 -perhaps use linux or run in lower privilege mode
 
